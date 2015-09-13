@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Blog Archive &mdash; {{ SITENAME }}{% endblock %}
+{% block title %}{{ SITENAME }} Archive {% endblock %}
 {% block content %}
 <div>
 	<article role="article">
@@ -24,7 +24,6 @@
                                 <a class='category' href='{{ SITEURL }}/{{ article.category.url }}'>{{ article.category }}</a>
                                 {{ tag }}
                             </span>
-			    {% include '_includes/article_stats.html' %}
                         </footer>
                     </article>
                 {% endfor %}

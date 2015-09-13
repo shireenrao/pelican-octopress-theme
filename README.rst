@@ -69,7 +69,6 @@ Google Analytics
 - ``GOOGLE_ANALYTICS``: "UA-XXXX-YYYY" to activate Google Analytics(classic)
 - ``GOOGLE_UNIVERSAL_ANALYTICS``: "UA-XXXX-Y" to activate Google Universal Analytics
 - ``GOOGLE_UNIVERSAL_ANALYTICS_COOKIEDOMAIN``: ``'auto'`` optional cookie domain setting for Google Universal Analytics
-- ``GOOGLE_ANALYTICS_DISPLAY_FEATURES``: ``True`` to enable `Display Advertiser Features <https://support.google.com/analytics/answer/2444872?hl=en&utm_id=ad>`_. This setting works for both Classic Analytics and Universal Analytics.
 
 Sidebar image
 -------------
@@ -81,7 +80,7 @@ Sidebar image
 - ``SEARCH_BOX``: set to true to enable site search box
 - ``SITESEARCH``: [default: 'http://google.com/search'] search engine to which
   search form should be pointed (optional)
-
+  
 QR Code generation
 -------------
 
@@ -94,75 +93,6 @@ FeedBurner integration
   displayed feed URL to your FeedBurner URL. This also disables generation of the RSS and ATOM tags, regardless of whether
   you've set the ``FEED_RSS`` or ``FEED_ATOM`` variables. This way, you can arbitrarily set your generated feed URL while
   presenting your FeedBurner URL to your users.
-
-Isso self-hosted comments
--------------------------
-
-`Isso`_ is intended to be a Free replacement for systems like Disqus. Because
-it is self-hosted, it gives you full control over the comments posted to your
-website.
-
-- ``ISSO_SITEURL``: (required to enable) set this to the URL of the server Isso
-  is being served from without a trailing slash. Example:
-  ``http://example.com``
-
-X min read
-----------
-
-medium.com like "X min read" feature. You need to activate the plugin
-``post_stats`` for this to work (default values are shown):
-
-- ``X_MIN_READ``: ``False``
-
-Favicon
--------
-
-- ``FAVICON_FILENAME``: set to path of your favicon. The default is empty in
-  which case the template will use the hardcoded address ``favicon.png``.
-
-Main Navigation (menu bar)
---------------------------
-
-- ``DISPLAY_PAGES_ON_MENU``: ``True`` show pages
-- ``DISPLAY_CATEGORIES_ON_MENU``: ``True`` show categories
-- ``DISPLAY_FEEDS_ON_MENU``: ``True`` show feed icons (on the very right side)
-- ``MENUITEMS``: ``()`` show static links (before categories)
-- ``MENUITEMS_MIDDLE``: ``()`` show static links (between pages and categories)
-  e.g.: ``MENUITEMS_MIDDLE = ( ('link1', '/static/file1.zip'), )``
-- ``MENUITEMS_AFTER``: ``()`` show static links (after categories)
-  e.g.: ``MENUITEMS_AFTER = ( ('link2', '/static/file2.pdf'), )``
-
-Markup for Social Sharing
--------------------------
-
-In order to specify page title, description, image and other metadata for
-customized social sharing (e.g.
-`Twitter cards <https://dev.twitter.com/cards/overview>`_), you can add
-the following metadata to each post:
-
-- ``title``: The title of the post. This is expected for any post.
-- ``description``: A long form description of the post.
-- ``social_image``: A path to an image, relative to ``SITEURL``. This image
-                    will show up next to the other information in social
-                    shares.
-- ``twitter_site``: A Twitter handle, e.g. ``@getpelican`` for the owner
-                    of the site.
-` ``twitter_creator``: A Twitter handle, e.g. ``@getpelican`` for the author
-                       of the post.
-
-In addition, you can provide a default post image (instead of setting
-``social_image`` in the post metadata), by setting ``SOCIAL_IMAGE`` in your
-``pelicanconf``.
-
-These can be used for social sharing on Google+, Twitter, and Facebook as
-well as provide more detailed page data for Google Search. In order
-to enable in each respective channel, your post metadata needs to specify:
-
-- ``title``: The title of the post. This is expected for any post.
-
-- ``use_schema_org: true``: For Google and Google+ specific meta tags.
-- ``use_open_graph: true``: For Facebook specific meta tags.
-- ``use_twitter_card: true``: For Twitter specific meta tags.
 
 Contribute
 ----------
@@ -179,8 +109,7 @@ Authors
 - `Ekin Ertaç`_: Open links in other window, add tags and categories.
 - `Jake Vanderplas`_: Work on Twitter, Google plus, Facebook, and Disqus plugins.
 - `Nicholas Terwoord`_: Additional fixes for Twitter, Google plus, and site search
-- `Mortada Mehyar`_: Display advertising features for Google Analytics
-- ... and many others. `Check the contributors`_.
+- ... and many others. `Check the contributors`_. 
 
 
 .. _`Pelican`: http://getpelican.com
@@ -192,6 +121,4 @@ Authors
 .. _`Ekin Ertaç`: https://github.com/ekinertac
 .. _`Jake Vanderplas`: https://github.com/jakevdp
 .. _`Nicholas Terwoord`: https://github.com/nt3rp
-.. _`Mortada Mehyar`: https://github.com/mortada
 .. _`Check the contributors`: https://github.com/duilio/pelican-octopress-theme/graphs/contributors
-.. _`Isso`: http://posativ.org/isso/

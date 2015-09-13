@@ -2,17 +2,10 @@
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-{% if article and article.use_schema_org %}
-<head itemscope itemtype="http://schema.org/Article">
-{% else %}
 <head>
-{% endif %}
   <meta charset="utf-8">
   <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
   <meta name="author" content="{{ AUTHOR }}">
-  {% if article and article.description %}
-  <meta name="description" content="{{ article.description }}" />
-  {% endif %}
 
   {% if FEED_FEEDBURNER %}
   <link href="http://feeds.feedburner.com/{{ FEED_FEEDBURNER }}" type="application/rss+xml" rel="alternate"
@@ -32,27 +25,19 @@
     {{ EXTRA_HEADER }}
   {% endif %}
 
-  {% if article %}
-  {% include '_includes/social_markup.html' %}
-  {% endif %}
-
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% if article and article.status == 'draft' %}
-    <meta name="robots" content="noindex, nofollow" />
-  {% endif %}
-
-  {% if FAVICON_FILENAME %}
-    <link href="{{ SITEURL }}/{{ FAVICON_FILENAME }}" rel="icon">
-  {% else %}
-    <link href="{{ SITEURL }}/favicon.png" rel="icon">
-  {% endif %}
-
+  <link href="{{ SITEURL }}/favicon.png" rel="icon">
   <link href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" media="screen, projection"
         rel="stylesheet" type="text/css">
+  <link href="{{ SITEURL }}/{{ CUSTOM_CSS }}" media="screen, projection"
+        rel="stylesheet" type="text/css">
+  <script src="{{ SITEURL }}/theme/js/modernizr-2.0.js"></script>
+  <script src="{{ SITEURL }}/theme/js/ender.js"></script>
+  <script src="{{ SITEURL }}/theme/js/octopress.js" type="text/javascript"></script>
 
   <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic"
         rel="stylesheet" type="text/css">
@@ -76,9 +61,6 @@
     </div>
   </div>
   <footer role="contentinfo">{% include '_includes/footer.html' %}</footer>
-  <script src="{{ SITEURL }}/theme/js/modernizr-2.0.js"></script>
-  <script src="{{ SITEURL }}/theme/js/ender.js"></script>
-  <script src="{{ SITEURL }}/theme/js/octopress.js" type="text/javascript"></script>
   {% include '_includes/after_footer.html' %}
 </body>
 </html>
